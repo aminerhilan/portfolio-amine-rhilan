@@ -279,12 +279,142 @@ nav a[aria-current=location]{background:var(--chip);color:var(--accent);box-shad
 }
 @media(prefers-reduced-motion:reduce){.project-filters button{transition:none}}
 </style>
+
+<style id="terminal-hero">
+.portfolio-brand{display:grid;gap:2px;flex:none;line-height:1.15}
+.portfolio-brand strong{font:700 clamp(1rem,2vw,1.24rem) var(--font-display);letter-spacing:-.035em}
+.portfolio-brand strong span{color:var(--accent)}
+.portfolio-brand small{color:var(--muted);font:500 .63rem var(--font-tech);letter-spacing:.07em;text-transform:uppercase}
+.bar nav{font:500 .73rem var(--font-tech);text-transform:uppercase;letter-spacing:.055em;gap:clamp(3px,.7vw,12px)}
+.bar nav a{padding:10px 6px}
+.bar nav a span{color:var(--muted);opacity:.7}
+.bar nav a[aria-current=location] span{color:var(--accent);opacity:1}
+.hero-terminal{background-image:radial-gradient(ellipse at 84% 24%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 60%),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:auto,72px 72px,72px 72px}
+.hero-terminal .wrap{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(38px,7vw,105px);padding-block:clamp(54px,7.6vw,110px)}
+.hero-copy{text-align:center;min-width:0}
+.hero-terminal h1{font-size:clamp(4.4rem,9.65vw,9rem);line-height:.86;letter-spacing:-.09em;margin:0 0 29px;animation:none}
+.hero-terminal h1 .name-row{display:block;width:fit-content;margin-inline:auto;padding-inline:.075em}
+.name-row+.name-row{margin-top:.1em}
+.hero-terminal h1 .name-glyph{display:inline-block;white-space:pre}
+.hero-terminal .terminal-role{display:flex;align-items:baseline;justify-content:center;gap:.55em;margin:0 0 16px;font-size:clamp(.83rem,1.44vw,1.19rem);text-transform:uppercase;letter-spacing:.065em;animation:none;line-height:1.55}
+.hero-terminal .terminal-role::before{content:none}
+.terminal-prompt{color:var(--muted)}
+.terminal-type{display:grid;min-width:0}
+.terminal-sizer,.terminal-output{grid-area:1/1}
+.terminal-sizer{opacity:0;padding-inline-end:.65em}
+.terminal-output{text-align:start;overflow-wrap:anywhere}
+.terminal-cursor{display:inline-block;width:.45em;height:1em;margin-left:.2em;background:var(--accent);vertical-align:-.11em}
+.hero-location{display:flex;justify-content:center;align-items:center;gap:7px;font:500 .78rem var(--font-tech);letter-spacing:.115em;text-transform:uppercase}
+.hero-location svg{color:var(--accent)}
+.hero-terminal .intro{margin:clamp(20px,3vw,35px) auto 0;max-width:49ch;text-wrap:pretty}
+.hero-terminal .actions{justify-content:center;margin-top:clamp(22px,3.1vw,35px)}
+.hero-terminal .button{font-family:var(--font-tech);font-size:.79rem;letter-spacing:.025em}
+.hero-terminal .hero-contact{border-color:color-mix(in srgb,var(--accent) 68%,var(--line));color:var(--accent)}
+.hero-terminal .photo{max-width:430px}
+.hero-terminal .photo img{max-height:min(64svh,550px);object-position:center 34%}
+@media(prefers-reduced-motion:no-preference){
+  .name-glyph{animation:glyph-in .62s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--glyph-delay)}
+  .terminal-cursor{animation:terminal-blink .95s step-end 7}
+  @keyframes glyph-in{from{opacity:0;translate:0 26%;filter:blur(5px)}to{opacity:1;translate:0 0;filter:blur(0)}}
+  @keyframes terminal-blink{50%{opacity:.18}}
+}
+@media(max-width:850px){.portfolio-brand small{display:none}.bar nav{letter-spacing:0}.bar nav a{padding-inline:4px}}
+@media(max-width:700px){
+ .hero-terminal .wrap{grid-template-columns:1fr;gap:38px;padding-block:48px 56px}
+ .hero-terminal h1{font-size:clamp(3.9rem,15vw,6.4rem);margin-bottom:23px}
+ .hero-terminal .photo{justify-self:center;max-width:345px}
+ .hero-terminal .photo img{max-height:none}
+ .hero-terminal .terminal-role{max-width:43ch;margin-inline:auto}
+ .bar nav{gap:12px}
+}
+</style>
+
+<style id="contact-finale-design">
+.heading h2,.hero-terminal h1,.contact-finale h2{font-weight:700}
+.heading h2{text-wrap:balance}
+.card h3,.skill h3,.event h3{text-wrap:pretty}
+.project-detail dd,.profile-text p,.event p:not(.label){line-height:1.72}
+.contact-finale{
+  position:relative;isolation:isolate;
+  background-color:var(--bg)!important;
+  background-image:radial-gradient(ellipse at 82% 28%,color-mix(in srgb,var(--accent) 11%,transparent),transparent 62%),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:auto,72px 72px,72px 72px;
+  padding-block:clamp(48px,7vw,95px);
+}
+.contact-index{display:flex;align-items:center;gap:12px;color:var(--muted);margin-bottom:clamp(28px,5vw,64px)}
+.contact-index span{color:var(--accent)}
+.contact-index::after{content:"";height:1px;background:var(--line);flex:1}
+.contact-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(30px,5vw,65px);align-items:center}
+.contact-title-column{container-type:inline-size}
+.contact-finale h2{
+  font-size:clamp(2.75rem,7.3vw,7.4rem);font-size:clamp(2.2rem,17.3cqi,8.2rem);line-height:.86;
+  letter-spacing:-.087em;text-transform:uppercase;margin:0;
+}
+.contact-finale h2 span{display:block;white-space:nowrap}
+.contact-finale h2 span+span{margin-top:.12em}
+.contact-finale h2 .contact-accent{color:var(--accent)}
+.contact-kicker{margin:0 0 12px}
+.contact-channel{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  border-top:1px solid var(--line);padding:clamp(13px,2vw,22px) 0;
+  font:700 clamp(1.06rem,2.25vw,1.8rem)/1.2 var(--font-display);letter-spacing:-.035em;
+  transition:color .18s ease;
+}
+.contact-channel span:first-child{overflow-wrap:anywhere}
+.contact-channel:hover{color:var(--accent)}
+.contact-channel:last-of-type{border-bottom:1px solid var(--line)}
+.contact-arrow{font:500 1.18rem var(--font-tech);color:var(--accent);transition:transform .2s ease;flex:none}
+.contact-channel:hover .contact-arrow{transform:translate(2px,-2px)}
+.contact-buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.contact-buttons .button{background:var(--chip);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));padding:8px 11px;min-height:42px;font:600 .72rem var(--font-tech);text-transform:uppercase}
+.contact-buttons .button:hover{border-color:var(--accent);color:var(--accent)}
+.contact-copy{cursor:pointer;color:var(--text)}
+.contact-copy[hidden]{display:none}
+.contact-feedback{min-height:1.4em;margin-top:8px;font-size:.82rem;color:var(--muted)}
+@media(max-width:760px){
+ .contact-layout{grid-template-columns:1fr;gap:30px}
+ .contact-finale h2{font-size:clamp(2.3rem,16.5cqi,6.35rem)}
+ .contact-panel{max-width:520px}
+}
+@media(prefers-reduced-motion:no-preference){
+ .contact-finale.contact-arrival h2 span{animation:contact-line-in .65s cubic-bezier(.18,.75,.25,1) both}
+ .contact-finale.contact-arrival h2 span:nth-child(2){animation-delay:.095s}
+ .contact-finale.contact-arrival h2 span:nth-child(3){animation-delay:.19s}
+ .contact-finale.contact-arrival .contact-panel{animation:contact-line-in .62s .13s ease-out both}
+ @keyframes contact-line-in{from{opacity:.3;translate:0 16px}to{opacity:1;translate:0 0}}
+}
+@media(prefers-reduced-motion:reduce){.contact-channel,.contact-arrow{transition:none}.contact-channel:hover .contact-arrow{transform:none}}
+</style>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<header class="bar"><div class="wrap"><a class="logo" href="#accueil" aria-label="Amine Rhilan, accueil">AR<span>_</span></a><nav aria-label="Navigation principale"><a href="#accueil">Accueil</a><a href="#projets">Projets</a><a href="#profil">À propos</a><a href="#parcours">Parcours</a><a href="#competences">Compétences</a><a href="#contact">Contact</a></nav><button class="theme" type="button" aria-label="Activer le thème clair" title="Activer le thème clair">☼</button></div><div class="scroll-progress" aria-hidden="true"></div></header>
+<header class="bar"><div class="wrap"><a class="portfolio-brand" href="#accueil"><strong>Amine Rhilan<span>.</span></strong><small>Génie électromécanique</small></a><nav aria-label="Navigation principale"><a href="#accueil"><span aria-hidden="true">01</span> Accueil</a><a href="#projets"><span aria-hidden="true">02</span> Projets</a><a href="#profil"><span aria-hidden="true">03</span> À propos</a><a href="#parcours"><span aria-hidden="true">04</span> Parcours</a><a href="#competences"><span aria-hidden="true">05</span> Compétences</a><a href="#contact"><span aria-hidden="true">06</span> Contact</a></nav><button class="theme" type="button" aria-label="Activer le thème clair" title="Activer le thème clair">☼</button></div><div class="scroll-progress" aria-hidden="true"></div></header>
 <main id="contenu">
-<section class="hero" id="accueil"><div class="wrap"><div><p class="label">Portfolio / Meknès, Maroc</p><h1>Amine <span>Rhilan</span></h1><p class="role">Élève ingénieur en génie électromécanique</p><p class="intro">En 5e année à l’ENSAM Meknès, je travaille sur la digitalisation industrielle, de la collecte de données machines à la supervision 3D et à la robotique mobile.</p><div class="actions"><a class="button primary" href="#projets">Voir mes projets ↘</a><a class="button" href="CV-Amine-Rhilan.pdf" download>Télécharger mon CV ↓</a></div></div><figure class="photo"><img src="portrait.jpg" alt="Portrait d’Amine Rhilan" width="900" height="1125"><figcaption><span>01 / PROFIL</span><span>ENSAM MEKNÈS</span></figcaption></figure></div></section>
+<section class="hero hero-terminal" id="accueil">
+<div class="wrap">
+  <div class="hero-copy">
+    <h1 aria-label="Amine Rhilan"><span class="name-row" aria-hidden="true">Amine</span><span class="name-row" aria-hidden="true">Rhilan</span></h1>
+    <p class="role terminal-role">
+      <span class="terminal-prompt" aria-hidden="true">&gt;</span>
+      <span class="terminal-type">
+        <span class="terminal-sizer">Élève ingénieur en génie électromécanique</span>
+        <span class="terminal-output" aria-hidden="true">Élève ingénieur en génie électromécanique<span class="terminal-cursor"></span></span>
+      </span>
+    </p>
+    <p class="hero-location"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Meknès, Maroc</p>
+    <p class="intro">En 5e année à l’ENSAM Meknès, je travaille sur la digitalisation industrielle, de la collecte de données machines à la supervision 3D et à la robotique mobile.</p>
+    <div class="actions">
+      <a class="button primary" href="#projets">Explorer mes projets <span aria-hidden="true">↘</span></a>
+      <a class="button hero-contact" href="#contact">Me contacter <span aria-hidden="true">↗</span></a>
+      <a class="button hero-cv" href="CV-Amine-Rhilan.pdf" download>Mon CV <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+  <figure class="photo">
+    <img src="portrait.jpg" alt="Portrait d’Amine Rhilan" width="900" height="1125" fetchpriority="high">
+    <figcaption><span>01 / PORTRAIT</span><span>ENSAM MEKNÈS</span></figcaption>
+  </figure>
+</div>
+</section>
 <section class="section" id="projets"><div class="wrap"><div class="heading"><p class="label">01 / Réalisations</p><h2>Projets techniques <span class="project-count">09 PROJETS</span></h2><p>Jumeau numérique, robotique mobile, supervision et réseaux industriels.</p></div>
 <div class="project-filters" hidden role="group" aria-label="Filtrer les projets">
   <button type="button" data-filter="all" aria-pressed="true">Tous</button>
@@ -323,7 +453,31 @@ nav a[aria-current=location]{background:var(--chip);color:var(--accent);box-shad
 </aside></div></section>
 <section class="section" id="parcours"><div class="wrap"><div class="heading"><p class="label">03 / Parcours</p><h2>Expériences et formation</h2></div><h3 class="subhead">Expériences professionnelles</h3><article class="event"><p class="label">Juil. – août 2026</p><div><h3>PFA · Digital Twin</h3><p class="place">OCP · Laverie de Youssoufia</p><p>Conception du jumeau numérique, acquisition OPC UA et historique SQL des pannes.</p></div></article><article class="event"><p class="label">Juil. – août 2025</p><div><h3>Stage · Automatisation et robotique</h3><p class="place">Safran Nacelles · Nouaceur</p><p>Étude et prototypage d’un AGV pour le transport de chariots. Dispositif ESP32 pour la traçabilité des outils.</p></div></article><article class="event"><p class="label">Août 2024</p><div><h3>Stage · IoT et systèmes embarqués</h3><p class="place">Alma MMep · Had Soualem</p><p>Prototype Smart Farm avec surveillance à distance et irrigation automatisée via ESP32, Raspberry Pi, MQTT et LoRa.</p></div></article><article class="event"><p class="label">Août 2023</p><div><h3>Stage · Maintenance industrielle</h3><p class="place">OCP · Youssoufia</p><p>Découverte du procédé de lavage du phosphate et de la maintenance préventive et corrective.</p></div></article><h3 class="subhead">Formation</h3><article class="event"><p class="label">Depuis 2024</p><div><h3>Cycle ingénieur · Génie électromécanique</h3><p class="place">ENSAM Meknès</p><p>Spécialisation en digitalisation industrielle.</p></div></article><article class="event"><p class="label">2022 – 2024</p><div><h3>Cycle préparatoire intégré</h3><p class="place">ENSAM Meknès</p><p>Mathématiques, physique, mécanique, électronique et informatique.</p></div></article></div></section>
 <section class="section" id="competences"><div class="wrap"><div class="heading"><p class="label">04 / Compétences</p><h2>Outils et technologies</h2></div><h3 class="subhead">Compétences techniques</h3><div class="cards"><article class="skill"><h3>Automates et contrôle industriel</h3><div class="tags"><span>Siemens S7-300 / S7-1200 / S7-1500</span><span>Allen-Bradley CompactLogix</span><span>TIA Portal</span><span>STEP 7</span><span>RSLogix 5000</span><span>RSLinx</span><span>Schneider / PL7</span><span>IHM</span><span>Capteurs industriels</span><span>Sécurité machine</span></div></article><article class="skill"><h3>Réseaux et protocoles industriels</h3><div class="tags"><span>PROFIBUS DP</span><span>PROFINET</span><span>EtherNet/IP</span><span>AS-Interface</span><span>Modbus TCP / RTU</span><span>OPC UA</span><span>MQTT</span><span>LoRa</span><span>WebSocket</span><span>HTTP / HTTPS</span></div></article><article class="skill"><h3>Cybersécurité industrielle et réseaux OT</h3><div class="tags"><span>Segmentation IT / DMZ / OT</span><span>VLAN</span><span>Siemens SCALANCE S615</span><span>Pare-feu Sophos</span><span>Contrôle des flux</span><span>VPN (notions)</span><span>Syslog</span><span>Wazuh</span><span>Analyse de journaux</span><span>Sécurisation PLC / SCADA</span></div></article><article class="skill"><h3>Supervision, jumeaux numériques et IIoT</h3><div class="tags"><span>SCADA</span><span>WinCC</span><span>Node-RED</span><span>KepServer / Kepware</span><span>AAS / AASX</span><span>Unity 3D</span><span>Tableaux de bord</span><span>Acquisition temps réel</span><span>Alarmes</span><span>Historiques et tendances</span><span>Traçabilité</span><span>Maintenance digitale</span></div></article><article class="skill"><h3>Robotique et navigation</h3><div class="tags"><span>ROS 2</span><span>Nav2</span><span>Gazebo</span><span>Isaac Sim</span><span>Isaac Lab</span><span>AGV</span><span>Suivi de ligne</span><span>QR codes</span><span>Capteurs ultrasonores</span><span>Cinématique et dynamique</span><span>Commande de moteurs</span></div></article><article class="skill"><h3>IA, vision et réalité augmentée</h3><div class="tags"><span>YOLO</span><span>Caméra industrielle</span><span>NVIDIA Jetson / Jetson Orin</span><span>Microsoft HoloLens</span><span>MRTK</span><span>Perception embarquée</span><span>Interfaces 3D et réalité augmentée</span></div></article><article class="skill"><h3>Systèmes embarqués et IoT</h3><div class="tags"><span>Raspberry Pi</span><span>STM32</span><span>ESP32</span><span>Arduino / Arduino IDE</span><span>Capteurs et actionneurs</span><span>Acquisition de données</span><span>Électronique embarquée</span><span>Prototypage</span><span>Impression 3D</span></div></article><article class="skill"><h3>Données, programmation et DevOps</h3><div class="tags"><span>Python</span><span>C / C++</span><span>Java</span><span>JavaScript</span><span>SQL</span><span>MATLAB / Simulink</span><span>Git / GitHub</span><span>Docker</span><span>Linux</span><span>VBA</span><span>HTML / CSS</span><span>Bases SQL</span><span>Indicateurs de fiabilité et de maintenance</span></div></article><article class="skill"><h3>CAO et ingénierie</h3><div class="tags"><span>SolidWorks</span><span>AutoCAD Electrical</span><span>ANSYS</span><span>KiCad</span><span>Modélisation 3D</span><span>Conception électromécanique</span><span>Maintenance préventive et corrective</span></div></article></div><h3 class="subhead">Compétences transversales et langues</h3><div class="cards"><article class="skill"><h3>Compétences transversales</h3><div class="tags"><span>Autonomie</span><span>Esprit analytique</span><span>Rigueur scientifique</span><span>Créativité</span><span>Adaptabilité</span><span>Travail en équipe</span><span>Leadership</span><span>Apprentissage actif</span></div></article><article class="skill"><h3>Langues</h3><div class="tags"><span>Arabe · langue maternelle</span><span>Français · courant</span><span>Anglais · professionnel</span></div></article></div></div></section>
-<section class="section contact" id="contact"><div class="wrap"><div class="heading"><p class="label">05 / Contact</p><h2>Parlons de votre projet</h2><p>Meknès, Maroc</p></div><div class="actions"><a class="button primary" href="mailto:rhilanamine2@gmail.com">M’écrire ↗</a><a class="button" href="tel:+212771936863">+212 771 936 863</a><a class="button" href="CV-Amine-Rhilan.pdf" download>Mon CV ↓</a></div></div></section>
+<section class="section contact contact-finale" id="contact" aria-labelledby="contact-title">
+<div class="wrap">
+  <p class="label contact-index"><span aria-hidden="true">[06]</span> Contact</p>
+  <div class="contact-layout">
+    <div class="contact-title-column">
+      <h2 id="contact-title" lang="en" aria-label="Let’s make industry smarter.">
+        <span aria-hidden="true">Let’s make</span>
+        <span class="contact-accent" aria-hidden="true">industry</span>
+        <span aria-hidden="true">smarter.</span>
+      </h2>
+    </div>
+    <div class="contact-panel">
+      <p class="label contact-kicker">Meknès, Maroc</p>
+      <a class="contact-channel" href="mailto:rhilanamine2@gmail.com"><span>rhilanamine2@gmail.com</span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+      <a class="contact-channel" href="tel:+212771936863"><span>+212 771 936 863</span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+      <div class="contact-buttons">
+        <button class="button contact-copy" type="button" hidden>Copier l’e-mail</button>
+        <a class="button" href="https://github.com/aminerhilan" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+        <a class="button" href="CV-Amine-Rhilan.pdf" download>Mon CV <span aria-hidden="true">↓</span></a>
+      </div>
+      <p class="contact-feedback" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+</section>
 </main><footer><div class="wrap"><span>© Amine Rhilan</span><a href="#accueil">Retour en haut ↑</a></div></footer>
 <script>
 const root = document.documentElement;
@@ -461,6 +615,77 @@ highlightSection();
     });
   }
   filters.hidden = false;
+})();
+</script>
+
+<script id="terminal-hero-animation">
+(() => {
+  const motion = matchMedia('(prefers-reduced-motion: no-preference)');
+  if (!motion.matches) return;
+  const rows = document.querySelectorAll('.hero-terminal .name-row');
+  let letter = 0;
+  for (const row of rows) {
+    const word = row.textContent;
+    row.replaceChildren(...Array.from(word, char => {
+      const glyph = document.createElement('span');
+      glyph.className = 'name-glyph';
+      glyph.style.setProperty('--glyph-delay', `${letter++ * 33}ms`);
+      glyph.textContent = char;
+      return glyph;
+    }));
+  }
+  const output = document.querySelector('.terminal-output');
+  const cursor = output.querySelector('.terminal-cursor');
+  const chars = Array.from(document.querySelector('.terminal-sizer').textContent);
+  const text = document.createTextNode('');
+  output.replaceChildren(text, cursor);
+  let next = 0;
+  function type() {
+    if (!motion.matches) {
+      text.data = chars.join('');
+      return;
+    }
+    text.appendData(chars[next++]);
+    if (next < chars.length) setTimeout(type, 22 + (next % 7 === 0 ? 20 : 0));
+  }
+  setTimeout(type, 470);
+})();
+</script>
+
+<script id="contact-finale-interactions">
+(() => {
+  const contact = document.querySelector('.contact-finale');
+  const button = contact.querySelector('.contact-copy');
+  const feedback = contact.querySelector('.contact-feedback');
+  const emailLink = contact.querySelector('a[href^="mailto:"]');
+  button.hidden = false;
+
+  button.addEventListener('click', async () => {
+    const email = emailLink.getAttribute('href').slice(7);
+    try {
+      await navigator.clipboard.writeText(email);
+      feedback.textContent = 'Adresse e-mail copiée.';
+    } catch {
+      const selection = getSelection();
+      if (selection) {
+        const range = document.createRange();
+        range.selectNodeContents(emailLink.firstElementChild);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+      feedback.textContent = 'Adresse affichée ci-dessus. Copie-la avec Ctrl+C ou le menu de ton téléphone.';
+    }
+  });
+
+  if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        contact.classList.add('contact-arrival');
+        observer.disconnect();
+      }
+    }, {threshold:.15});
+    observer.observe(contact);
+  }
 })();
 </script>
 </body></html>
